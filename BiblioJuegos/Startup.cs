@@ -1,4 +1,6 @@
-﻿using BiblioJuegos.DAL;
+﻿using BiblioJuegos.BLL;
+using BiblioJuegos.DAL;
+using BiblioJuegos.DAL.IRepo;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -30,7 +32,14 @@ namespace BiblioJuegos
 
             services.AddDbContext<BiblioJuegosContext>(x =>
                 x.UseSqlServer(Configuration.GetConnectionString("Conexion")));
-
+            
+            #region LogicaDeNegocios(Repositorios)
+            services.AddScoped<ICategoriaRepo, CategoriaRepo>();
+            services.AddScoped<ICompaniaRepo, CompaniaRepo>();
+            services.AddScoped<IPlataformaRepo, PlataformaRepo>();
+            services.AddScoped<IUsuarioRepo, UsuarioRepo>();
+            services.AddScoped<IVideojuegoRepo, VideojuegoRepo>();
+            #endregion
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
