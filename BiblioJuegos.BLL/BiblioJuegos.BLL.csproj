@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BiblioJuegos.DAL\BiblioJuegos.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
