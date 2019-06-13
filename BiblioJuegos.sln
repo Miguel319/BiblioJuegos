@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiblioJuegos", "BiblioJuegos\BiblioJuegos.csproj", "{4016E6D2-CACB-43B1-A482-F514BCEE4849}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiblioJuegos", "BiblioJuegos\BiblioJuegos.csproj", "{4016E6D2-CACB-43B1-A482-F514BCEE4849}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiblioJuegos.BOL", "BiblioJuegos.BOL\BiblioJuegos.BOL.csproj", "{2089179F-97B4-4339-817F-8E9DE5400835}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiblioJuegos.DAL", "BiblioJuegos.DAL\BiblioJuegos.DAL.csproj", "{EF1F0017-B35C-4C15-BA0C-7D80E10B1426}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiblioJuegos.BLL", "BiblioJuegos.BLL\BiblioJuegos.BLL.csproj", "{DFD2D7CF-6982-4F0E-8303-895D298062B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{4016E6D2-CACB-43B1-A482-F514BCEE4849}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4016E6D2-CACB-43B1-A482-F514BCEE4849}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4016E6D2-CACB-43B1-A482-F514BCEE4849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2089179F-97B4-4339-817F-8E9DE5400835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2089179F-97B4-4339-817F-8E9DE5400835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2089179F-97B4-4339-817F-8E9DE5400835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2089179F-97B4-4339-817F-8E9DE5400835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF1F0017-B35C-4C15-BA0C-7D80E10B1426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF1F0017-B35C-4C15-BA0C-7D80E10B1426}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF1F0017-B35C-4C15-BA0C-7D80E10B1426}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF1F0017-B35C-4C15-BA0C-7D80E10B1426}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFD2D7CF-6982-4F0E-8303-895D298062B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFD2D7CF-6982-4F0E-8303-895D298062B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFD2D7CF-6982-4F0E-8303-895D298062B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFD2D7CF-6982-4F0E-8303-895D298062B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
