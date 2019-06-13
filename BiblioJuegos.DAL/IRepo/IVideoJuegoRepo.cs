@@ -4,7 +4,7 @@ using BiblioJuegos.BOL;
 
 namespace BiblioJuegos.DAL.IRepo
 {
-    public class IVideoJuegoRepo
+    public interface IVideojuegoRepo
     {
         Task<Videojuego> ObtenerPorId(int id);
         Task<IEnumerable<Videojuego>> ObtenerTodos();
