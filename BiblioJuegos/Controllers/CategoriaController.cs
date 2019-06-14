@@ -21,7 +21,8 @@ namespace BiblioJuegos.Controllers
             var categoriasLista = categorias.Select(x => new CategoriaVM()
             {
                 Id = x.Id,
-                Nombre = x.Nombre
+                Nombre = x.Nombre,
+                ImagenURL = x.ImagenURL
             });
 
             return View(categoriasLista);

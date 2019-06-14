@@ -10,6 +10,7 @@ namespace BiblioJuegos.BOL
         public string Titulo { get; set; }
         [DisplayName("Lanzamiento")]
         public DateTime Lanzamiento { get; set; }
+        public string ImagenURL{ get; set; }
         public DateTime AgregadoEn { get; set; }
         public virtual Categoria Categoria { get; set; }
         public virtual Compania Compania { get; set; }

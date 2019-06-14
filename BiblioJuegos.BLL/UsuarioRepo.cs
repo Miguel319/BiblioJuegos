@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using BiblioJuegos.BOL;
 using BiblioJuegos.DAL;
@@ -19,6 +20,7 @@ namespace BiblioJuegos.BLL
 
         public async Task Agregar(Usuario Usuario)
         {
+            Usuario.AgregadoEn = DateTime.Now;
             await _context.Usuarios.AddAsync(Usuario);
             await _context.SaveChangesAsync();
         }
