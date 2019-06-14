@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace BiblioJuegos.ViewModels
+namespace BiblioJuegos.ViewModels.CategoriaVM
 {
-    public class CategoriaVM
+    public class CategoriaVMIndex
     {
         public int Id { get; set; }
         public string ImagenURL { get; set; }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BiblioJuegos.ViewModels.CategoriaVM>
+﻿@model IEnumerable<BiblioJuegos.ViewModels.CategoriaVM.CategoriaVMIndex>
 
 @{
     ViewData["Title"] = "Index";
@@ -6,36 +6,18 @@
 
 <h1>Index</h1>
 
+<a asp-action="Agregar" class="btn btn-primary">Agregar</a>
 
-<table class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                <a asp-action="Agregar">Agregar</a>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.ActionLink("Actualizar", "Actualizar", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Details", new {  id=item.Id }) |
-                @Html.ActionLink("Eliminar", "", new {  id=item.Id })
-            </td>
-        </tr>
+@foreach (var item in Model)
+{
+        <div class="col-md-4">
+            <div class="text-center">
+                <div class="card-header border-primary
+             d-flex justify-content-between align-items-center card-primary">
+                    @Html.DisplayName(item.Nombre)
+                    <button class="btn btn-danger" asp-action="Eliminar"><i class="far fa-trash-alt"></i></button>
+                </div>
+            </div>
+            <img src="@item.ImagenURL" class="card-img-top" id="imagen"/>
+        </div>
 }
-    </tbody>
-</table>

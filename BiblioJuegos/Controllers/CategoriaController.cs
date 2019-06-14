@@ -1,9 +1,9 @@
 ﻿using BiblioJuegos.BOL;
 using BiblioJuegos.DAL.IRepo;
-using BiblioJuegos.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
+using BiblioJuegos.ViewModels.CategoriaVM;
 
 namespace BiblioJuegos.Controllers
 {
@@ -18,11 +18,12 @@ namespace BiblioJuegos.Controllers
         {
             var categorias = await _repo.ObtenerTodas();
 
-            var categoriasLista = categorias.Select(x => new CategoriaVM()
+            var categoriasLista = categorias.Select(x => new CategoriaVMIndex()
             {
                 Id = x.Id,
                 Nombre = x.Nombre,
                 ImagenURL = x.ImagenURL
+                
             });
 
             return View(categoriasLista);
@@ -32,13 +33,14 @@ namespace BiblioJuegos.Controllers
         public IActionResult Agregar() => View();
 
         [HttpPost]
-        public async Task<IActionResult> Agregar(CategoriaVM categoriaVM)
+        public async Task<IActionResult> Agregar(CategoriaVMIndex categoriaVM)
         {
             if (ModelState.IsValid)
             {
                 var categoria = new Categoria()
                 {
                     Nombre = categoriaVM.Nombre,
+                    ImagenURL = categoriaVM.ImagenURL
                 };
 
                 await _repo.Agregar(categoria);
@@ -52,7 +54,7 @@ namespace BiblioJuegos.Controllers
         {
             var categoria = await _repo.ObtenerPorId(id);
 
-            var categoriaViwModel = new CategoriaVM()
+            var categoriaViwModel = new CategoriaVMIndex()
             {
                 Id = categoria.Id,
                 Nombre = categoria.Nombre
@@ -61,7 +63,7 @@ namespace BiblioJuegos.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Actualizar(CategoriaVM categoriaVM)
+        public async Task<IActionResult> Actualizar(CategoriaVMIndex categoriaVM)
         {
             if (ModelState.IsValid)
             {
