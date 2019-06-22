@@ -70,7 +70,8 @@ namespace BiblioJuegos.Controllers
                 var categoria = new Categoria
                 {
                     Id = categoriaVM.Id,
-                    Nombre = categoriaVM.Nombre
+                    Nombre = categoriaVM.Nombre,
+                    ImagenURL = categoriaVM.ImagenURL
                 };
                 await _repo.Actualizar(categoria);
 
@@ -79,6 +80,24 @@ namespace BiblioJuegos.Controllers
 
             return View(categoriaVM);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Detalles(int id)
+        {
+            var categoria = await _repo.ObtenerPorId(id);
+
+            var categoriaViewModel = new CategoriaVMDetalles()
+            {
+                Id = categoria.Id,
+                Nombre = categoria.Nombre,
+                Descripcion = categoria.Descripcion,
+                ImagenURL = categoria.ImagenURL,
+                AgregadoEn = categoria.AgregadoEn
+            };
+
+            return View(categoriaViewModel);
+        }
+
 
         [HttpGet]
         public async Task<IActionResult> Eliminar(int id)

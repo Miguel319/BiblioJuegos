@@ -8,7 +8,8 @@ namespace BiblioJuegos.BOL
         public int Id { get; set; }
         [DisplayName("Título")]
         public string Titulo { get; set; }
-        [DisplayName("Lanzamiento")]
+        [DisplayName("Descripción")]
+        public string Descripcion { get; set; }
         public DateTime Lanzamiento { get; set; }
         public string ImagenURL{ get; set; }
         public DateTime AgregadoEn { get; set; }
