@@ -11,6 +11,5 @@ namespace BiblioJuegos.ViewModels.CategoriaVM
         public string Descripcion { get; set; }
         public string ImagenURL { get; set; }
         public DateTime AgregadoEn { get; set; }
-
     }
 }

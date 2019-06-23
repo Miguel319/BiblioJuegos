@@ -22,8 +22,8 @@ namespace BiblioJuegos.Controllers
             {
                 Id = x.Id,
                 Nombre = x.Nombre,
-                ImagenURL = x.ImagenURL
-                
+                ImagenURL = x.ImagenURL,
+                Descripcion = x.Descripcion
             });
 
             return View(categoriasLista);
@@ -40,6 +40,7 @@ namespace BiblioJuegos.Controllers
                 var categoria = new Categoria()
                 {
                     Nombre = categoriaVM.Nombre,
+                    Descripcion = categoriaVM.Descripcion,
                     ImagenURL = categoriaVM.ImagenURL
                 };
 
@@ -57,7 +58,9 @@ namespace BiblioJuegos.Controllers
             var categoriaViwModel = new CategoriaVMIndex()
             {
                 Id = categoria.Id,
-                Nombre = categoria.Nombre
+                Nombre = categoria.Nombre,
+                Descripcion = categoria.Descripcion,
+                ImagenURL = categoria.ImagenURL
             };
             return View(categoriaViwModel);
         }
@@ -71,6 +74,7 @@ namespace BiblioJuegos.Controllers
                 {
                     Id = categoriaVM.Id,
                     Nombre = categoriaVM.Nombre,
+                    Descripcion = categoriaVM.Descripcion,
                     ImagenURL = categoriaVM.ImagenURL
                 };
                 await _repo.Actualizar(categoria);

@@ -9,5 +9,7 @@ namespace BiblioJuegos.BOL
         public string ImagenURL { get; set; }
         public string Contra { get; set; }
         public DateTime AgregadoEn { get; set; }
+
+        public Usuario() => AgregadoEn = DateTime.Now;
     }
 }

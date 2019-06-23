@@ -9,8 +9,9 @@ namespace BiblioJuegos.BOL
         public string ImagenURL { get; set; }
         public DateTime AgregadoEn { get; set; }
         public string Nombre { get; set; }
-        [DisplayName("Descripción")]
         public string Descripcion { get; set; }
+
+        public Compania() => AgregadoEn = DateTime.Now;
 
     }
 }
