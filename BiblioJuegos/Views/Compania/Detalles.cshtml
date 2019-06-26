@@ -1,4 +1,4 @@
-﻿@model BiblioJuegos.ViewModels.CategoriaVM.CategoriaVMDetalles
+﻿@model BiblioJuegos.ViewModels.CompaniaVM.CompaniaVMDetalles
 
 @{
     ViewData["Title"] = "Detalles";
@@ -6,29 +6,30 @@
 
 
 <div class="col-md-6">
-    <h1 class="text-center">Detalles de @Model.Nombre</h1>
+<h1 class="text-center">Detalles de @Model.Nombre</h1>
 
-    <hr />
-    
-    <img src="@Model.ImagenURL" class="card card-img-top mb-3" id="imagen" />
+
+    <hr/>
+
+    <img src="@Model.ImagenURL" class="card card-img-top mb-3" id="imagen"/>
 
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nombre)
         </dt>
-        <dd class = "col-sm-12">
+        <dd class="col-sm-12">
             @Html.DisplayFor(model => model.Nombre)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Descripcion)
         </dt>
-        <dd class = "col-sm-12">
+        <dd class="col-sm-12">
             @Html.DisplayFor(model => model.Descripcion)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.AgregadoEn)
         </dt>
-        <dd class = "col-sm-12">
+        <dd class="col-sm-12">
             @Html.DisplayFor(model => model.AgregadoEn)
         </dd>
     </dl>

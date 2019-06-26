@@ -1,10 +1,10 @@
-﻿@model BiblioJuegos.ViewModels.CategoriaVM.CategoriaVMIndex
+﻿@model BiblioJuegos.ViewModels.CompaniaVM.CompaniaVMIndex
 
 @{
     ViewData["Title"] = "Agregar";
 }
 
-<h1>Agregar categoría</h1>
+<h1 class="text-center">Agregar compañía</h1>
 
 <hr />
 <div class="row">
@@ -41,10 +41,9 @@
 
 <script>
     function exito() {
-        return setTimeout(alalertify.success("Categoría agregada satisfactoriamente"), 1500);
+        return setTimeout(alalertify.success("Compañía agregada satisfactoriamente"), 1500);
     }
 </script>
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

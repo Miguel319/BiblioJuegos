@@ -32,10 +32,10 @@ namespace BiblioJuegos
 
             services.AddDbContext<BiblioJuegosContext>(x =>
                 x.UseSqlServer(Configuration.GetConnectionString("Conexion")));
-            
+
             #region LogicaDeNegocios(Repositorios)
-            services.AddScoped<ICategoriaRepo, CategoriaRepo>();
             services.AddScoped<ICompaniaRepo, CompaniaRepo>();
+            services.AddScoped<ICategoriaRepo, CategoriaRepo>();
             services.AddScoped<IPlataformaRepo, PlataformaRepo>();
             services.AddScoped<IUsuarioRepo, UsuarioRepo>();
             services.AddScoped<IVideojuegoRepo, VideojuegoRepo>();

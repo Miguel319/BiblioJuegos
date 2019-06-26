@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1 class="text-center">Categorías</h1>
+<h1 class="text-center">Catálogo de categorías</h1>
 
 <a asp-action="Agregar" class="btn btn-primary mb-3 text-right"><i class="far fa-plus-square"></i> Agregar</a>
 <div class="row">
@@ -20,7 +20,6 @@
                         <a asp-action="Actualizar" asp-route-id="@item.Id" class="btn btn-info" asp-controller="Categoria"><i class="fas fa-marker"></i></a>
                         <a class="btn btn-danger mr-0" asp-action="Eliminar" asp-controller="Categoria" asp-route-id="@item.Id"><i class="far fa-trash-alt"></i></a>
                     </div>
-
                 </div>
             </div>
             <div class="card-body">
@@ -33,4 +32,3 @@
     </div>
 }
 </div>   
-    

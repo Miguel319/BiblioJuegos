@@ -102,12 +102,24 @@ namespace BiblioJuegos.Controllers
             return View(categoriaViewModel);
         }
 
+        [HttpGet]
+
+
 
         [HttpGet]
         public async Task<IActionResult> Eliminar(int id)
         {
-            await _repo.Eliminar(id);
-            return RedirectToAction("Index");
+            try
+            {
+                await _repo.Eliminar(id);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                TempData["ErrorCategoria"] =
+                    "Esta categoría está vinculada con un videojuego. Desvincúlela para eliminarla.";
+                return RedirectToAction("Index");
+            }
         }
     }
 }

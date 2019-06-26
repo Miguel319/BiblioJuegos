@@ -1,15 +1,15 @@
-﻿@model BiblioJuegos.ViewModels.CategoriaVM.CategoriaVMIndex
+﻿@model BiblioJuegos.ViewModels.CompaniaVM.CompaniaVMIndex
 
 @{
-    ViewData["Title"] = "Agregar";
+    ViewData["Title"] = "Actualizar";
 }
 
-<h1>Agregar categoría</h1>
+<h1 class="text-center">Actualizar @Model.Nombre</h1>
 
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Agregar">
+        <form asp-action="Actualizar">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nombre" class="control-label"></label>
@@ -28,7 +28,7 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <button class="btn btn-primary btn-block" type="submit" onclick="exito()"><i class="fas fa-check-square"></i> Aceptar</button>
+                    <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-database"></i> Guardar</button>
                 </div>
                 <div class="form-group col-md-6">
                     <a asp-action="Index" class="btn btn-danger btn-block"><i class="far fa-window-close"></i> Cancelar</a>
@@ -37,14 +37,6 @@
         </form>
     </div>
 </div>
-
-
-<script>
-    function exito() {
-        return setTimeout(alalertify.success("Categoría agregada satisfactoriamente"), 1500);
-    }
-</script>
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
