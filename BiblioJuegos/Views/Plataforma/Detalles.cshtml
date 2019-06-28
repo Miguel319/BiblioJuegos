@@ -1,0 +1,43 @@
+﻿@model BiblioJuegos.ViewModels.PlataformaVM.PlataformaVMDetalles
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+
+<div class="col-md-6">
+    <h1 class="text-center">Detalles de @Model.Nombre</h1>
+
+    <hr />
+
+    <img src="@Model.ImagenURL" class="card card-img-top mb-3" id="imagen" />
+
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AgregadoEn)
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.AgregadoEn)
+        </dd>
+    </dl>
+    <div class="row">
+        <div class="col-md-6">
+            <a asp-action="Actualizar" asp-route-id="@Model.Id" class="btn btn-info btn-block"><i class="fas fa-marker"></i> Editar</a>
+        </div>
+        <div class="col-md-6">
+            <a asp-action="Index" class="btn btn-danger btn-block"><i class="far fa-window-close"></i> Cancelar</a>
+        </div>
+    </div>
+</div>
