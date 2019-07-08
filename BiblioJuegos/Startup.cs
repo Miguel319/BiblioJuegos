@@ -34,11 +34,11 @@ namespace BiblioJuegos
                 x.UseSqlServer(Configuration.GetConnectionString("Conexion")));
 
             #region LogicaDeNegocios(Repositorios)
+            services.AddScoped<IVideojuegoRepo, VideojuegoRepo>();
             services.AddScoped<ICompaniaRepo, CompaniaRepo>();
             services.AddScoped<ICategoriaRepo, CategoriaRepo>();
             services.AddScoped<IPlataformaRepo, PlataformaRepo>();
             services.AddScoped<IUsuarioRepo, UsuarioRepo>();
-            services.AddScoped<IVideojuegoRepo, VideojuegoRepo>();
             #endregion
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

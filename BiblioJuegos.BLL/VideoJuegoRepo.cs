@@ -13,10 +13,16 @@ namespace BiblioJuegos.BLL
         public VideojuegoRepo(BiblioJuegosContext context) : base(context) { }
 
         public async Task<Videojuego> ObtenerPorId(int id) =>
-            await _context.Videojuegos.FindAsync(id);
+            await _context.Videojuegos.Include(x => x.Categoria)
+                .Include(x => x.Compania)
+                .Include(x => x.Plataforma)
+                .FirstOrDefaultAsync(x => x.Id == id);
 
         public async Task<IEnumerable<Videojuego>> ObtenerTodos() =>
-            await _context.Videojuegos.ToListAsync();
+            await _context.Videojuegos.Include(x => x.Categoria)
+                .Include(x => x.Compania)
+                .Include(x => x.Plataforma)
+                .ToListAsync();
 
         public async Task Agregar(Videojuego Videojuego)
         {

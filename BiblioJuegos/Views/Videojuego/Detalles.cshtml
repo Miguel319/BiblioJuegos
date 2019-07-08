@@ -1,0 +1,67 @@
+﻿@model BiblioJuegos.ViewModels.VideojuegoVM.VideojuegoVMDetalles
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1 class="text-center">Detalles de @Model.Titulo</h1>
+
+<div class="col-md-6">
+    <hr />
+    <dl class="row">
+        
+        <img src="@Model.ImagenURL" class="card card-img-top mb-3" id="imagen" />
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lanzamiento)
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.Lanzamiento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AgregadoEn)
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.AgregadoEn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Categoria)
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.Categoria)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Compania)
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.Compania)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Plataforma)
+        </dt>
+        <dd class="col-sm-12">
+            @Html.DisplayFor(model => model.Plataforma)
+        </dd>
+    </dl>
+    <div class="row">
+        <div class="col-md-6">
+            <a asp-action="Actualizar" asp-route-id="@Model.Id" class="btn btn-info btn-block"><i class="fas fa-marker"></i> Editar</a>
+        </div>
+        <div class="col-md-6">
+            <a asp-action="Index" class="btn btn-danger btn-block"><i class="far fa-window-close"></i> Cancelar</a>
+        </div>    
+    </div>
+    
+</div>

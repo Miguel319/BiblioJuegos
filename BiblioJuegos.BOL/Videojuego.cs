@@ -13,11 +13,16 @@ namespace BiblioJuegos.BOL
         public DateTime AgregadoEn { get; set; }
         public virtual Categoria Categoria { get; set; }
         public virtual Compania Compania { get; set; }
-        public virtual Usuario Usuario { get; set; }
         public virtual Plataforma Plataforma { get; set; }
 
 
-        public Videojuego() => AgregadoEn = DateTime.Now;
+        public Videojuego()
+        {
+            AgregadoEn = DateTime.Now;
+            Categoria = new Categoria();
+            Compania = new Compania();
+            Plataforma = new Plataforma();
+        } 
 
     }
 }

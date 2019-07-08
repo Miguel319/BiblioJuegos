@@ -79,6 +79,7 @@ namespace BiblioJuegos.Controllers
                     Descripcion = plataforma.Descripcion,
                     ImagenURL = plataforma.ImagenURL
                 };
+                await _repo.Actualizar(plataformaModel);
 
                 return RedirectToAction("Index");
             }
@@ -118,7 +119,5 @@ namespace BiblioJuegos.Controllers
                 return RedirectToAction("Index");
             }
         }
-
-
     }
 }

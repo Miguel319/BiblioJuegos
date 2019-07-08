@@ -19,7 +19,7 @@
                         <p class="ml-3"><b>@item.Nombre</b></p>
                         <div class="ml-auto mr-3">
                             <a asp-action="Actualizar" asp-route-id="@item.Id" class="btn btn-info" asp-controller="Compania"><i class="fas fa-marker"></i></a>
-                            <a class="btn btn-danger mr-0" asp-action="Eliminar" asp-controller="Compania" asp-route-id="@item.Id"><i class="far fa-trash-alt"></i></a>
+                            <a class="btn btn-danger mr-0" asp-action="Eliminar" asp-controller="Compania" asp-route-id="@item.Id"><i class="far fa-trash-alt" onclick="confirmar()"></i></a>
                         </div>
                     </div>
                 </div>
@@ -33,3 +33,10 @@
         </div>
     }
 </div>
+
+
+<script>
+    function confirmar() {
+        return confirm('¿Seguro que quieres eliminar esta compañía?');
+    }
+</script>
