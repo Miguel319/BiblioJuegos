@@ -8,6 +8,15 @@
 
 <a asp-action="Agregar" class="btn btn-primary mb-3 text-right"><i class="far fa-plus-square"></i> Agregar</a>
 
+
+@if (TempData["ErrorCompania"] != null)
+{
+    <div class="alert alert-dismissable alert-danger">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        @TempData["ErrorCompania"].ToString()
+    </div>
+}
+
 <div class="row">
 
     @foreach (var item in Model)
