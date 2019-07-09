@@ -2,7 +2,55 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="jumbotron jumbotron-fluid" style="background: #2e80d9">
+    <div class="container">
+        <h1 class="display-4 text-center text-light"><i class="fab fa-fantasy-flight-games"></i> BiblioJuegos <i class="fab fa-playstation"></i></h1>
+        <br/>
+        <h5 class="container text-center text-light">Puedes agregar, actualizar y eliminar videojuegos con sus respectivas categorías, compañías y plataformas. </h5>
+    </div>
 </div>
+
+<div class="row">
+        <div class="col-sm-3 mb-4">
+                <div class="card">
+                    <img src="https://www.gamecrate.com/sites/default/files/minecraft-amplified-world-2.jpg" class="card-img-top" style ="height: 160px;"  alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Categorías</h5>
+                        <p class="card-text">¡Simplifícate! Separa tus juegos por categorías.</p>
+                        <a asp-controller="Categoria" asp-action="Index" class="btn btn-primary btn-block"><i class="fas fa-eye"></i> Visitar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 mb-4">
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/6e/e3/2c/6ee32cef28dfbe4ead6671b44cfebe09.jpg"  style ="height: 140px;" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Compañías</h5>
+                    <p class="card-text">¿Demasiadas compañías? Ordena tus juegos según la casa desarrolladora.</p>
+                    <a asp-controller="Compania" asp-action="Index" class="btn btn-primary btn-block"><i class="fas fa-eye"></i> Visitar</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-3 mb-4">
+            <div class="card" >
+                <img src="https://img.newatlas.com/games-console-comparison-1.png?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C0%2C1745%2C981&w=616&s=0fa263e9354260ec0e2a4e4b34559cf7" style ="height: 160px;"  class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Plataformas/consolas</h5>
+                    <p class="card-text">Puedes organizar tus juegos según sus plataformas.</p>
+                    <a asp-action="Index" asp-controller="Plataforma" class="btn btn-primary btn-block"><i class="fas fa-eye"></i> Visitar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-4">
+            <div class="card" >
+                <img src="https://www.maketecheasier.com/assets/uploads/2017/03/duelyst-game.jpg" class="card-img-top" style ="height: 140px;"  alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Videojuegos</h5>
+                    <p class="card-text">Administra tus videojuegos: añade más a la librería, actualízalos, elímanalos.</p>
+                    <a asp-controller="Videojuego" asp-action="Index" class="btn btn-primary btn-block"><i class="fas fa-eye"></i> Visitar</a>
+                </div>
+            </div>
+        </div>
+    </div>

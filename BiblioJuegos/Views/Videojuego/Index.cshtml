@@ -23,9 +23,9 @@
     {
         <div class="col-md-4 mb-4">
             <div class="card bg-light">
-                <div class="card-header text-center">
+                <div class="card-header text-center" style="background: #2472f0">
                     <div class="row">
-                        <p class="ml-3"><b>@item.Titulo</b></p>
+                        <p class="ml-3 text-light"><b>@item.Titulo</b></p>
                         <div class="ml-auto mr-3">
                             <a asp-action="Actualizar" asp-route-id="@item.Id" class="btn btn-info" asp-controller="Videojuego"><i class="fas fa-marker"></i></a>
                             <a class="btn btn-danger mr-0" asp-action="Eliminar" asp-controller="Videojuego" asp-route-id="@item.Id" onclick="confirmar()"><i class="far fa-trash-alt"></i></a>

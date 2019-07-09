@@ -15,10 +15,8 @@ namespace BiblioJuegos.BOL
         public virtual Compania Compania { get; set; }
         public virtual Plataforma Plataforma { get; set; }
 
-
         public Videojuego()
         {
-            AgregadoEn = DateTime.Now;
             Categoria = new Categoria();
             Compania = new Compania();
             Plataforma = new Plataforma();
