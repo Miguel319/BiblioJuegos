@@ -1,4 +1,6 @@
-﻿@model IEnumerable<BiblioJuegos.ViewModels.CategoriaVM.CategoriaVMIndex>
+﻿@model ReflectionIT.Mvc.Paging.PagingList<BiblioJuegos.ViewModels.CategoriaVM.CategoriaVMIndex>
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *,ReflectionIT.MVC.Paging
 
 @{
     ViewData["Title"] = "Index";
@@ -16,8 +18,15 @@
     </div>
 }
 
-<div class="row">
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item">
+                @await this.Component.InvokeAsync("Pager", new {pagingList = this.Model})
+        </li>
+    </ul>
+</nav>
 
+<div class="row">
     @foreach (var item in Model)
     {
         <div class="col-md-4 mb-4">
@@ -27,7 +36,7 @@
                         <p class="ml-3 text-light"><b>@item.Nombre</b></p>
                         <div class="ml-auto mr-3">
                             <a asp-action="Actualizar" asp-route-id="@item.Id" class="btn btn-info" asp-controller="Categoria"><i class="fas fa-marker"></i></a>
-                            <a class="btn btn-danger mr-0" asp-action="Eliminar" asp-controller="Categoria" asp-route-id="@item.Id" onclick="confirmar()"><i class="far fa-trash-alt"></i></a>
+                            <a class="btn btn-danger mr-0" asp-action="Eliminar" asp-controller="Categoria" asp-route-id="@item.Id" onclick="return confirmar();"><i class="far fa-trash-alt"></i></a>
                         </div>
                     </div>
                 </div>
@@ -41,6 +50,12 @@
         </div>
     }
 </div>
+
+<nav aria-label="Suppliers navigation example">
+    <vc:pager paging-list="@Model" />        
+</nav>
+
+
 
 <script>
     function confirmar() {

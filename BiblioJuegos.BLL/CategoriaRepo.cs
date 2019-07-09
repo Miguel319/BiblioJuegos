@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using BiblioJuegos.BOL;
 using BiblioJuegos.DAL;
@@ -16,7 +17,9 @@ namespace BiblioJuegos.BLL
             await _context.Categorias.FindAsync(id);
 
         public async Task<IEnumerable<Categoria>> ObtenerTodas() =>
-            await _context.Categorias.ToListAsync();
+            await _context.Categorias.AsNoTracking()
+                .OrderBy(x => x.Nombre)
+                .ToListAsync();
 
         public async Task Agregar(Categoria categoria)
         {
@@ -36,5 +39,8 @@ namespace BiblioJuegos.BLL
             _context.Categorias.Remove(await ObtenerPorId(id));
             await _context.SaveChangesAsync();
         }
+
+        public IOrderedQueryable<Categoria> OrdenarPorNombre()
+            =>  _context.Categorias.AsNoTracking().OrderBy(x => x.Nombre);
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
 using BiblioJuegos.ViewModels.CategoriaVM;
+using ReflectionIT.Mvc.Paging;
 
 namespace BiblioJuegos.Controllers
 {
@@ -14,19 +15,20 @@ namespace BiblioJuegos.Controllers
         public CategoriaController(ICategoriaRepo repo) => _repo = repo;
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page  = 1)
         {
-            var categorias = await _repo.ObtenerTodas();
+            var categorias = _repo.OrdenarPorNombre();
 
-            var categoriasLista = categorias.Select(x => new CategoriaVMIndex()
+            var categoriasLista = (IOrderedQueryable<CategoriaVMIndex>) categorias.Select(x => new CategoriaVMIndex()
             {
                 Id = x.Id,
                 Nombre = x.Nombre,
                 ImagenURL = x.ImagenURL,
                 Descripcion = x.Descripcion
             });
+            var modeloARetornar = await PagingList.CreateAsync(categoriasLista, 5, page);
 
-            return View(categoriasLista);
+            return View(modeloARetornar);
         }
 
         [HttpGet]

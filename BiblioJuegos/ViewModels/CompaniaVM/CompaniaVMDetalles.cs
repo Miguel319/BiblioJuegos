@@ -6,6 +6,7 @@ namespace BiblioJuegos.ViewModels.CompaniaVM
     public class CompaniaVMDetalles
     {
         public int Id { get; set; }
+        [DisplayName("Ruta de la imagen")]
         public string ImagenURL { get; set; }
         public DateTime AgregadoEn { get; set; }
         public string Nombre { get; set; }

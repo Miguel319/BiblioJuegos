@@ -9,6 +9,7 @@ namespace BiblioJuegos.ViewModels.CategoriaVM
         public string Nombre { get; set; }
         [DisplayName("Descripción")]
         public string Descripcion { get; set; }
+        [DisplayName("Ruta de la imagen")]
         public string ImagenURL { get; set; }
         public DateTime AgregadoEn { get; set; }
     }

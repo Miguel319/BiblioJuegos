@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ReflectionIT.Mvc.Paging;
 
 namespace BiblioJuegos
 {
@@ -32,6 +33,8 @@ namespace BiblioJuegos
 
             services.AddDbContext<BiblioJuegosContext>(x =>
                 x.UseSqlServer(Configuration.GetConnectionString("Conexion")));
+
+            services.AddPaging();
 
             #region LogicaDeNegocios(Repositorios)
             services.AddScoped<IVideojuegoRepo, VideojuegoRepo>();

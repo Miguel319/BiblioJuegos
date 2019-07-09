@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using BiblioJuegos.BOL;
 
@@ -11,5 +12,6 @@ namespace BiblioJuegos.DAL.IRepo
         Task Agregar(Categoria categoria);
         Task Actualizar(Categoria categoria);
         Task Eliminar(int id);
+        IOrderedQueryable<Categoria> OrdenarPorNombre();
     }
 }

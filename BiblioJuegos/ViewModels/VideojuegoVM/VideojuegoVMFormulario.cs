@@ -10,14 +10,19 @@ namespace BiblioJuegos.ViewModels.VideojuegoVM
     {
         public int Id { get; set; }
         [DisplayName("Título")]
+        [Required(ErrorMessage = "Este campo es obligatorio.")]
         public string Titulo { get; set; }
         [DisplayName("Descripción")]
+        [Required(ErrorMessage = "Este campo es obligatorio.")]
         public string Descripcion { get; set; }
         [DataType(DataType.Date)]
+        [Required(ErrorMessage = "Este campo es obligatorio.")]
         public DateTime Lanzamiento { get; set; }
+        [DisplayName("Ruta de la imagen")]
+        [Required(ErrorMessage = "Este campo es obligatorio.")]
         public string ImagenURL { get; set; }
         public DateTime AgregadoEn { get; set; }
-        [DisplayName("Categorías")]
+        [Required(ErrorMessage = "Este campo es obligatorio.")]
         public IEnumerable<Categoria> Categorias { get; set; }
         public int CategoriaId { get; set; }
         [DisplayName("Compañías")]
